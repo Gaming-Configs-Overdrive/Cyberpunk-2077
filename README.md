@@ -1,41 +1,58 @@
-# Game Config Skeleton
+[![Release](https://github.com/Gaming-Configs-Overdrive/Cyberpunk-2077/actions/workflows/release.yml/badge.svg)](https://github.com/Gaming-Configs-Overdrive/Cyberpunk-2077/actions/workflows/release.yml)
+[![Lint](https://github.com/Gaming-Configs-Overdrive/Cyberpunk-2077/actions/workflows/lint.yml/badge.svg)](https://github.com/Gaming-Configs-Overdrive/Cyberpunk-2077/actions/workflows/lint.yml)
+[![Pages](https://github.com/Gaming-Configs-Overdrive/Cyberpunk-2077/actions/workflows/pages.yml/badge.svg)](https://github.com/Gaming-Configs-Overdrive/Cyberpunk-2077/actions/workflows/pages.yml)
+
+# Cyberpunk 2077
 
 > [Deutsche Readme Version hier](./README.de.md)
+>
+> [Release Changelog](./CHANGELOG.md)
 
-<!-- TEMPLATE START -->
-This repository serves as a skeleton for creating and managing game configurations and modding packs. It supports building configurations for various games and deploying them for both Windows and macOS gaming with different sub-axis of pre-configuration.
+Optimized configs and QoL mods for Cyberpunk 2077 (Steam, GOG, Epic; Windows and Linux/Proton).
 
-## Features
-- Modular structure for game-specific configs.
-- Rollup integration for building configurations.
-- Cross-platform deployment support.
+## What is this about?
 
-## Getting Started
-1. Clone the repository.
-2. Replace this `README.md` with the `README.template.md` file and customize it for your project.
-3. Install dependencies:
+No configs or mods are included yet. The manifest [game.yml](./game.yml) already describes the game (stores, executable, mod folders), so the installer `gco-install` can detect it once content is added.
+
+Where the game keeps its settings, INIs and mods: [docs/CONFIG_PATHS.md](./docs/CONFIG_PATHS.md).
+
+## Installing (recommended)
+
+1. Download `fullrelease.zip` from the [Releases](https://github.com/Gaming-Configs-Overdrive/Cyberpunk-2077/releases) and extract it.
+2. Close the game.
+3. Run `install.bat` (Windows) or `install.sh` (Linux/Steam Deck), or use the installer directly:
    ```bash
-   yarn install
+   gco-install install --dry-run
+   gco-install install
    ```
-4. Add your game-specific configs in the `configs/` folder.
-5. Add your mods and the needed folder structure in the `mods/` folder.
-6. Write down documentation and instructions in the `docs/` folder. 
-7. Build the configs:
-   ```bash
-   yarn run build
-   ```
+   The installer detects the game (Steam/Epic/GOG, Proton), shows a plan and backs up every file it touches.
+4. Undo everything with `gco-install restore`.
 
-## Folder Structure
-- `configs/`: Game-specific configuration files.
-- `docs/`   : Documentation about scripts or instructions for configs or mods
-- `mods/`   : Game-specific mod files for packing the modpack
-- `src/`    : scripts and plugins for building or generation in rollup building
+## Installing manually
 
-## Additional Notes
-- You can provide README files in multiple languages by following the format `README.[tld].md`, where `[tld]` is the language code (e.g., `README.de.md` for German, `README.fr.md` for French).
-- Please ensure that all language-specific READMEs are linked in the main `README.md` file.
+1. Download `config.zip` (configs) and, if needed, `modpack.zip` (mods, relative to the game folder).
+2. Copy the config files to the paths in [docs/CONFIG_PATHS.md](./docs/CONFIG_PATHS.md).
+3. Extract `modpack.zip` into the game folder.
+4. Download the mods listed as `link` in `MODS.md` from their source.
 
-<!-- TEMPLATE END -->
+Verify downloads with `sha256sum -c SHA256SUMS`.
 
-## License
-MIT
+## Mods
+
+See `MODS.md` in the release for versions, sources and licenses.
+
+## General Advice
+
+- Put own engine tweaks into a new `.ini` file in `engine/config/platform/pc/`; never overwrite `user.ini`.
+- Game updates can reset config files; run the installer again after a patch.
+
+## Development
+
+```bash
+npm install
+npm run validate
+npm run build
+npm test
+```
+
+Manifest reference: [docs/GAME_MANIFEST.md](./docs/GAME_MANIFEST.md).

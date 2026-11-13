@@ -1,0 +1,29 @@
+# Game manifest, see docs/GAME_MANIFEST.md and schema/game.schema.json.
+# yaml-language-server: $schema=./schema/game.schema.json
+schema: 1
+id: cyberpunk-2077
+name: Cyberpunk 2077
+online: false
+stores:
+  steam: { appid: 1091500 }
+  gog: { id: '1423049311' }
+  epic: { appName: Ginger, catalogItemId: 5beededaad9743df90e8f07d92df153f }
+detect:
+  exe: bin/x64/Cyberpunk2077.exe
+processes: [Cyberpunk2077.exe]
+files: [] # no configs yet
+mods:
+  # install roots, see docs/CONFIG_PATHS.md
+  layout:
+    - archive/pc/mod
+    - r6/scripts
+    - r6/tweaks
+    - bin/x64/plugins/cyber_engine_tweaks/mods
+    - red4ext/plugins
+  items: []
+notes:
+  general: >-
+    Own engine INI tweaks go into a new .ini file in
+    {GAME_DIR}/engine/config/platform/pc/ (the game loads every .ini there);
+    never overwrite user.ini. Graphics settings live in UserSettings.json under
+    %LOCALAPPDATA%\CD Projekt Red\Cyberpunk 2077 (same for all stores).
