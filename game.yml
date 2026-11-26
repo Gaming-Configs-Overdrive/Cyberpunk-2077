@@ -29,8 +29,7 @@ mods:
       name: RED4ext
       version: '1.31.1'
       source:
-        type: github
-        repo: WopsS/RED4ext
+        type: url
         url: https://github.com/WopsS/RED4ext/releases/tag/v1.31.1
       license: MIT
       distribute: link
@@ -40,8 +39,7 @@ mods:
       name: redscript
       version: '0.5.32'
       source:
-        type: github
-        repo: jac3km4/redscript
+        type: url
         url: https://github.com/jac3km4/redscript/releases/tag/v0.5.32
       license: MIT
       distribute: link
@@ -50,8 +48,7 @@ mods:
       name: Cyber Engine Tweaks
       version: '1.38.1'
       source:
-        type: github
-        repo: maximegmd/CyberEngineTweaks
+        type: url
         url: https://github.com/maximegmd/CyberEngineTweaks/releases/tag/v1.38.1
       license: MIT (v1.38.1)
       distribute: link
@@ -62,8 +59,7 @@ mods:
       name: ArchiveXL
       version: '1.28.12'
       source:
-        type: github
-        repo: psiberx/cp2077-archive-xl
+        type: url
         url: https://github.com/psiberx/cp2077-archive-xl/releases/tag/v1.28.12
       license: MIT
       distribute: link
@@ -73,8 +69,7 @@ mods:
       name: TweakXL
       version: '1.12.2'
       source:
-        type: github
-        repo: psiberx/cp2077-tweak-xl
+        type: url
         url: https://github.com/psiberx/cp2077-tweak-xl/releases/tag/v1.12.2
       license: MIT
       distribute: link
@@ -84,8 +79,7 @@ mods:
       name: Codeware
       version: '1.21.4'
       source:
-        type: github
-        repo: psiberx/cp2077-codeware
+        type: url
         url: https://github.com/psiberx/cp2077-codeware/releases/tag/v1.21.4
       license: MIT
       distribute: link
@@ -95,8 +89,7 @@ mods:
       name: Equipment-EX
       version: '1.3.0'
       source:
-        type: github
-        repo: psiberx/cp2077-equipment-ex
+        type: url
         url: https://github.com/psiberx/cp2077-equipment-ex/releases/tag/v1.3.0
       license: MIT
       distribute: link
@@ -113,9 +106,8 @@ mods:
       name: Native Settings UI
       version: '1.97'
       source:
-        type: nexus
-        modId: 3518
-        url: https://www.nexusmods.com/cyberpunk2077/mods/3518?tab=files
+        type: url
+        url: https://www.nexusmods.com/cyberpunk2077/mods/3518?file_id=167644
       license: Author permissions (redistribution prohibited)
       distribute: link
       requires: [cyber-engine-tweaks@>=1.38.0]
