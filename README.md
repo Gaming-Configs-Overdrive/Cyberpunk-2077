@@ -8,43 +8,27 @@
 >
 > [Release Changelog](./CHANGELOG.md)
 
-Optimized configs and QoL mods for Cyberpunk 2077 (Steam, GOG, Epic; Windows and Linux/Proton).
+PC mod setup for Cyberpunk 2077 patch 2.5 (Steam, GOG and Epic).
 
-## What is this about?
+## Mods for patch 2.5
 
-No configs or mods are included yet. The manifest [game.yml](./game.yml) already describes the game (stores, executable, mod folders), so the installer `gco-install` can detect it once content is added.
+This release links to six core frameworks, Equipment-EX and Native Settings UI. See `MODS.md` in the [Releases](https://github.com/Gaming-Configs-Overdrive/Cyberpunk-2077/releases) for exact versions, dependencies, sources and licenses. Find the manifest and documentation in `fullrelease.zip`. Download mod files directly from their authors.
 
-Where the game keeps its settings, INIs and mods: [docs/CONFIG_PATHS.md](./docs/CONFIG_PATHS.md).
+[Update 2.5](https://www.cyberpunk.net/en/news/52120/check-out-whats-coming-to-night-city-in-the-edgerunners-2-update-for-cyberpunk-2077) also added an in-game **Mods** menu with a curated, cross-platform catalog powered by mod.io. For mods from that catalog, follow the [CD PROJEKT RED setup guide](https://support.cdprojektred.com/en/cyberpunk/pc/gameplay/issue/3034/cross-platform-mod-support-how-to-1). The PC frameworks here use the authors’ installation steps.
 
-## Installing (recommended)
+## Installing PC mods
 
-1. Download `fullrelease.zip` from the [Releases](https://github.com/Gaming-Configs-Overdrive/Cyberpunk-2077/releases) and extract it.
-2. Close the game.
-3. Run `install.bat` (Windows) or `install.sh` (Linux/Steam Deck), or use the installer directly:
-   ```bash
-   gco-install install --dry-run
-   gco-install install
-   ```
-   The installer detects the game (Steam/Epic/GOG, Proton), shows a plan and backs up every file it touches.
-4. Undo everything with `gco-install restore`.
+1. Close the game and download `MODS.md` from the release.
+2. Install the linked frameworks in the listed order. Follow each author's instructions, especially when replacing an older version.
+3. Launch to the main menu before adding optional mods. On Steam Deck or Linux, check the authors’ Proton instructions.
 
-## Installing manually
+If the game fails to launch after updating, follow the [patch 2.5 troubleshooting guide](./docs/PATCH_2_5.md).
 
-1. Download `config.zip` (configs) and, if needed, `modpack.zip` (mods, relative to the game folder).
-2. Copy the config files to the paths in [docs/CONFIG_PATHS.md](./docs/CONFIG_PATHS.md).
-3. Extract `modpack.zip` into the game folder.
-4. Download the mods listed as `link` in `MODS.md` from their source.
-
-Verify downloads with `sha256sum -c SHA256SUMS`.
-
-## Mods
-
-See `MODS.md` in the release for versions, sources and licenses.
+See [config and mod paths](./docs/CONFIG_PATHS.md) for installation locations.
 
 ## General Advice
 
-- Put own engine tweaks into a new `.ini` file in `engine/config/platform/pc/`; never overwrite `user.ini`.
-- Game updates can reset config files; run the installer again after a patch.
+- Put custom engine tweaks into a new `.ini` file in `engine/config/platform/pc/` and keep `user.ini` intact.
 
 ## Development
 

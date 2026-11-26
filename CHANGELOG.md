@@ -8,6 +8,8 @@ This file is based on the Semver-Model ('Added', 'Changed', 'Removed')
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-11-26
+
 ### Changed
 
 - build: migrate to the new `game-config-skeleton`: plain Node 24 build with npm (`npm run build`), manifest check (`npm run validate`) and tests (`npm test`)
@@ -16,7 +18,8 @@ This file is based on the Semver-Model ('Added', 'Changed', 'Removed')
 
 ### Added
 
-- `game.yml` for Cyberpunk 2077: Steam/GOG/Epic ids, executable, process and mod folders (no configs or mods yet)
+- `game.yml` for Cyberpunk 2077: Steam/GOG/Epic IDs, executable, mod folders and pinned upstream downloads for six core frameworks, Equipment-EX and Native Settings UI for patch 2.5
+- Patch 2.5 startup troubleshooting, including how to verify the base game and restore mods in stages
 - `docs/CONFIG_PATHS.md`: settings, engine INI and mod paths incl. Proton
 - `docs/ARCHITECTURE.md`, `docs/GAME_MANIFEST.md`, `schema/`, `test/`, `template-sync.yml`, `.templatesyncignore`, `renovate.json`, `_config.yml`, `.nvmrc`, `.prettierignore`
 
